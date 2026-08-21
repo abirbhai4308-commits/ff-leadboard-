@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☠『TG』ꜱQᴜᴀD☠ - Tournament Leadboard</title>
+    <title>☠『TG』ꜱQᴜᴀ德☠ - Tournament Leaderboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -25,12 +25,11 @@
             overflow-x: hidden;
         }
 
-        /* Main Outer Box - Glassmorphism Upgrade */
         .main-wrapper {
             width: 100%;
             max-width: 580px;
-            background: rgba(13, 19, 33, 0.6); /* Semi-transparent background */
-            backdrop-filter: blur(12px); /* The glass blur effect */
+            background: rgba(13, 19, 33, 0.6);
+            backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 204, 0, 0.3);
             border-radius: 18px;
@@ -42,7 +41,6 @@
             position: relative;
         }
 
-        /* Neon Floor Reflection Effect */
         .main-wrapper::after {
             content: '';
             position: absolute;
@@ -56,7 +54,6 @@
             z-index: -1;
         }
 
-        /* Top Badge - Sleeker Design */
         .top-badge {
             background: linear-gradient(135deg, rgba(255, 100, 0, 0.2), rgba(255, 204, 0, 0.2));
             border: 1px solid rgba(255, 204, 0, 0.4);
@@ -71,7 +68,6 @@
             box-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
         }
 
-        /* Header Style - Enhanced Glow */
         .header-title {
             color: #ffcc00;
             font-size: 1.8rem;
@@ -92,7 +88,6 @@
             text-transform: uppercase;
         }
 
-        /* Nav Tabs - Futuristic Buttons */
         .nav-tabs {
             display: flex;
             gap: 10px;
@@ -117,22 +112,6 @@
             overflow: hidden;
         }
 
-        /* Hover sweep effect for tabs */
-        .tab::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 204, 0, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .tab:hover:not(.active):before {
-            left: 100%;
-        }
-
         .tab.active {
             background: #ffcc00;
             color: #080b12;
@@ -141,13 +120,6 @@
             transform: translateY(-3px) scale(1.05);
         }
 
-        .tab:hover:not(.active) {
-            border-color: rgba(255, 204, 0, 0.7);
-            box-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
-            transform: translateY(-1px);
-        }
-
-        /* Table Box Wrapper - Glassmorphism Upgrade */
         .table-box {
             width: 100%;
             border: 1px solid rgba(255, 204, 0, 0.3);
@@ -156,13 +128,13 @@
             background: rgba(19, 27, 46, 0.5);
             backdrop-filter: blur(5px);
             box-shadow: inset 0 0 15px rgba(0,0,0,0.4);
+            min-height: 150px;
         }
 
-        /* Table Styling */
         table {
             width: 100%;
             border-collapse: separate;
-            border-spacing: 0 10px; /* Space between rows */
+            border-spacing: 0 10px;
             text-align: center;
         }
 
@@ -184,160 +156,102 @@
             font-weight: 700;
             border-top: 1px solid rgba(255, 204, 0, 0.15);
             border-bottom: 1px solid rgba(255, 204, 0, 0.15);
-            transition: all 0.3s ease;
         }
 
-        td:first-child {
-            border-left: 1px solid rgba(255, 204, 0, 0.15);
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-        }
-
-        td:last-child {
-            border-right: 1px solid rgba(255, 204, 0, 0.15);
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-
-        /* Row Hover Effect - Pulse & Glow */
-        tr:hover td {
-            background: linear-gradient(90deg, rgba(29, 44, 78, 0.9) 0%, rgba(35, 53, 93, 0.9) 100%);
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
-            transform: scale(1.01);
-        }
-
-        /* Grand Champion Banner Style - Royal Glow */
-        .grand-champion-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 45px 20px;
-            background: radial-gradient(circle, rgba(255, 204, 0, 0.15) 0%, rgba(19, 27, 46, 0.6) 100%);
-            border: 2px solid #ffcc00;
-            border-radius: 16px;
-            box-shadow: 0 0 30px rgba(255, 204, 0, 0.3), inset 0 0 15px rgba(255, 204, 0, 0.2);
-            animation: borderPulse 2s infinite alternate;
-        }
-
-        .trophy-icon {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            animation: scaleUpDown 1.5s infinite ease-in-out;
-            /* Supercharged Golden Glow */
-            filter: drop-shadow(0 0 15px #ffcc00) drop-shadow(0 0 30px #ff9900);
-        }
-
-        .grand-title {
-            font-size: 2.8rem;
-            font-weight: 900;
+        .loading-text {
+            text-align: center;
             color: #ffcc00;
-            letter-spacing: 6px;
-            /* Deep Golden Text Shadow */
-            text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900, 0 0 30px #ff6600;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .champion-name {
-            font-size: 1.1rem;
-            color: #ffffff;
-            letter-spacing: 3px;
-            font-weight: 800;
-            text-transform: uppercase;
-            font-style: italic;
-        }
-
-        @keyframes borderPulse {
-            0% { border-color: rgba(255, 204, 0, 0.3); }
-            100% { border-color: rgba(255, 204, 0, 0.8); }
-        }
-
-        @keyframes scaleUpDown {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            font-size: 0.85rem;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
     <div class="main-wrapper">
-        <!-- Top Badge -->
         <div class="top-badge">🔥 FREE FIRE DUO CUP 🔥</div>
+        <div class="header-title">☠『TG』ꜱQᴜᴀ德☠</div>
+        <div class="header-subtitle">TOURNAMENT LEADERBOARD</div>
 
-        <!-- Guild Title -->
-        <div class="header-title">☠『TG』ꜱQᴜᴀD☠</div>
-        <div class="header-subtitle">TOURNAMENT LEADBOARD</div>
-
-        <!-- Navigation Buttons -->
         <div class="nav-tabs">
             <button class="tab active" onclick="switchTab(this, 'Teams')">Teams</button>
-            <button class="tab" onclick="switchTab(this, 'Matches')">Matches</button>
-            <button class="tab" onclick="switchTab(this, 'Point Table')">Point Table</button>
-            <button class="tab champion" onclick="switchTab(this, 'Champion')">🏆 Champion</button>
+            <button class="tab" onclick="switchTab(this, 'Champion')">🏆 Champion</button>
         </div>
 
-        <!-- Main Leaderboard Box -->
         <div class="table-box" id="content-box">
-            <!-- Dynamic Content loads here -->
+            <div class="loading-text">Loading from Google Sheet...</div>
         </div>
     </div>
 
     <script>
-        const tableData = {
-            "Teams": `
+        // আপনার গুগল শিটের আইডি দিয়ে এপিআই লিংক তৈরি করা হয়েছে
+        const API_URL = "https://sheetdb.io/api/v1/1f1x4iXYMJOg6r56dy_eZfQ-PTvJzYF2TQcRL-5pDfi8"; 
+
+        let cachedData = [];
+
+        async function fetchSheetData() {
+            try {
+                const response = await fetch(API_URL);
+                cachedData = await response.json();
+                renderTeamsTable();
+            } catch (error) {
+                document.getElementById('content-box').innerHTML = `<div class="loading-text">Failed to load data from Sheet.</div>`;
+            }
+        }
+
+        function renderTeamsTable() {
+            let rows = "";
+            if(!Array.isArray(cachedData) || cachedData.length === 0) {
+                rows = `<tr><td colspan="5">No data found in sheet</td></tr>`;
+            } else {
+                cachedData.forEach((item, index) => {
+                    rows += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${item.team || '--'}</td>
+                            <td>${item.group || '--'}</td>
+                            <td>${item.player1 || '--'}</td>
+                            <td>${item.player2 || '--'}</td>
+                        </tr>
+                    `;
+                });
+            }
+
+            document.getElementById('content-box').innerHTML = `
                 <table>
                     <thead>
                         <tr><th>#</th><th>TEAM NAME</th><th>GROUP</th><th>PLAYER 1 (LEADER)</th><th>PLAYER 2</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>1</td><td>--</td><td>--</td><td>--</td><td>--</td></tr>
+                        ${rows}
                     </tbody>
                 </table>
-            `,
-            "Matches": `
-                <table>
-                    <thead>
-                        <tr><th>MATCH NO</th><th>GROUP</th><th>TEAM NAME</th><th>VS</th><th>TEAM NAME</th><th>WINNER</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>#01</td><td>--</td><td>--</td><td>VS</td><td>--</td><td>--</td></tr>
-                    </tbody>
-                </table>
-            `,
-            "Point Table": `
-                <table>
-                    <thead>
-                        <tr><th>GROUP</th><th>POS</th><th>TEAM NAME</th><th>PLAYED</th><th>WON</th><th>LOST</th><th>PTS</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>--</td><td>01</td><td>--</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                    </tbody>
-                </table>
-            `,
-            "Champion": `
-                <div class="grand-champion-wrapper">
-                    <div class="trophy-icon">🏆</div>
-                    <div class="grand-title">CHAMPION</div>
-                    <div class="champion-name">👑 WINNING GUILD SQUAD / TEAM 👑</div>
-                </div>
-            `
-        };
+            `;
+        }
 
         function switchTab(button, tabName) {
             const tabs = document.querySelectorAll('.tab');
             tabs.forEach(t => t.classList.remove('active'));
-
             button.classList.add('active');
 
-            document.getElementById('content-box').innerHTML = tableData[tabName];
+            const contentBox = document.getElementById('content-box');
+
+            if(tabName === 'Teams') {
+                renderTeamsTable();
+            } else if(tabName === 'Champion') {
+                contentBox.innerHTML = `
+                    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:35px 15px;">
+                        <div style="font-size:3.5rem; margin-bottom:10px;">🏆</div>
+                        <div style="font-size:2rem; font-weight:900; color:#ffcc00; letter-spacing:4px; text-shadow:0 0 15px #ffcc00;">CHAMPION</div>
+                        <div style="font-size:0.9rem; color:#fff; letter-spacing:2px; font-weight:700; margin-top:5px;">👑 TG SQUAD CHAMPIONS 👑</div>
+                    </div>
+                `;
+            }
         }
 
-        // Page Load Default
         window.onload = function() {
-            document.getElementById('content-box').innerHTML = tableData["Teams"];
+            fetchSheetData();
         };
     </script>
-
 </body>
 </html>
